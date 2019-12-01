@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage de stock{% endblock %}
+
+{% block body %}
+    <div class="container container1">
+        <h1> L'équipement qui reste en stock</h1>
+        <h2><a class="btn btn-warning" href="{{ path('information') }}">INFORMATION SUPPLÉMENTAIRE</a></h2>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Stock numéro</th>
+                    <td>{{ stock.id }}</td>
+                </tr>
+                <tr>
+                    <th>Chasuble</th>
+                    <td>{{ stock.chasuble }}</td>
+                </tr>
+                <tr>
+                    <th>Ballon</th>
+                    <td>{{ stock.ballon }}</td>
+                </tr>
+                <tr>
+                    <th>Plot</th>
+                    <td>{{ stock.plot }}</td>
+                </tr>
+                <tr>
+                    <th>Barre</th>
+                    <td>{{ stock.barre }}</td>
+                </tr>
+                <tr>
+                    <th>Mini_plot</th>
+                    <td>{{ stock.miniPlot }}</td>
+                </tr>
+                <tr>
+                    <th>Maillot</th>
+                    <td>{{ stock.maillot }}</td>
+                </tr>
+                <tr>
+                    <th>Short</th>
+                    <td>{{ stock.short }}</td>
+                </tr>
+                <tr>
+                    <th>Sifflet</th>
+                    <td>{{ stock.sifflet }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="display: inline-block"><a class="btn btn-primary" href="{{ path('stockage') }}">Retour à la liste</a></div>
+        <div style="display: inline-block"><a class="btn btn-success" href="{{ path('edition', {'id': stock.id}) }}">Modifier</a></div>
+        <div style="display: inline-block">{{ include('stock/supprimer.html.twig') }}</div>
+    </div>
+{% endblock %}

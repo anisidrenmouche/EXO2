@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Stock{% endblock %}
+
+{% block body %}
+    <div class="container container2">
+    <div class="table-responsive text-nowrap">
+    <h1> Créer ton nouveau stock </h1>
+
+         <div style="table">{{ include('stock/form.html.twig') }} <br>
+         <div style="display: inline-block"><a class="btn btn-secondary" href="{{ path('stockage') }}">Retour à la liste</a>
+
+
+</div>
+    
+    </div>
+{% endblock %}
